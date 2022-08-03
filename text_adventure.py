@@ -32,25 +32,15 @@ class Room(object):
         self.enemy = enemy
         self.connections = {} 
     
-
     def add_connection(self, room: "Room", direction, reverse_direction=None):
-
         # connect to other room
-
         self.connections[direction] = room
-
         # connect other room to this room in oposite direction
-
         if reverse_direction:
-
             room.connections[reverse_direction] = self
-        
-
-
+    
 def navigate(room:Room):
-
     print("*"*60)
-
     print(f"You are in {room.name}")
     if room.enemies:
         combat(enemies)

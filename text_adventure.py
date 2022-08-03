@@ -8,10 +8,10 @@ class Directions(object):
     EAST = "east"
     WEST = "west"
 
-context = Enum("Context",
+context = Enum("Context",[
     "navigate",
     "fight"
-)
+])
 
 class Enemy(object):
     def __init__(self, hp=100, attacks:list=None):
@@ -42,8 +42,8 @@ class Room(object):
 def navigate(room:Room):
     print("*"*60)
     print(f"You are in {room.name}")
-    if room.enemies:
-        combat(enemies)
+    if room.enemy:
+        combat(room.enemy)
     
     if room.items:
         print("You see:")
